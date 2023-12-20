@@ -1,0 +1,30 @@
+@use "./styles/partials/reset";
+@use "./styles/partials/colors" as *;
+@use "./styles/partials/layout-grid";
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/padding" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
+
+body {
+  background-color: $background-light-gray;
+  color: $primary-instock-black;
+  font-family: "Titillium Web", sans-serif;
+}
+
+::placeholder {
+  color: $secondary-slate;
+}
+
+.main {
+  @extend .container;
+
+  background-color: $primary-white;
+  border-radius: $padding-1;
+  box-shadow: 0 0.125rem 0.3125rem rgba($primary-instock-black, 10%);
+  margin-top: -$padding-9;
+
+  @include medium {
+    margin-top: -6rem;
+  }
+}

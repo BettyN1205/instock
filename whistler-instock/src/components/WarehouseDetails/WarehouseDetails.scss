@@ -1,0 +1,147 @@
+@use "../../styles/partials/_colors" as *;
+@use "../../styles/partials/_mixins" as *;
+// @use "../../styles/partials/_type-kit" as *;
+
+body {
+  background-color: $background-light-gray;
+}
+
+.warehouses {
+  margin-top: -6.275rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  @include large {
+    width: 80%;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: $secondary-cloud 0.01rem solid;
+
+    @include medium {
+      padding: 2rem;
+    }
+
+    &-edit-text {
+      display: none;
+      color: $primary-white;
+
+      @include medium {
+        display: inline;
+      }
+    }
+    &-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+    }
+    &-subcontainer {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      justify-content: space-between;
+    }
+    &__icons--edit {
+      filter: brightness(0) invert(100%);
+      margin-top: 0.25rem;
+      margin-left: 0.25rem;
+      @include medium {
+        margin-top: 0;
+        margin-right: 0.25rem;
+        margin-left: 0rem;
+      }
+    }
+
+    &-text {
+      padding-left: 0.5rem;
+      padding-right: 4.5rem;
+    }
+    &-bg {
+      border-radius: 50%;
+      background-color: $primary-instock-indigo;
+      height: 2rem;
+      width: 2rem;
+      text-align: center;
+
+      @include medium {
+        height: auto;
+        width: auto;
+        border-radius: 1.5rem;
+        padding: 0.25rem 1rem;
+        display: flex;
+      }
+    }
+  }
+
+  &__info {
+    padding: 1rem;
+    font-size: 0.75rem;
+    border-bottom: 1.5px solid $secondary-cloud;
+
+    @include medium {
+      padding: 2rem;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      border-bottom: none;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    &-subheaders {
+      color: $secondary-slate;
+      margin-top: 0;
+    }
+    &-text {
+      color: $secondary-slate;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    &-contact {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      flex-basis: 60%;
+
+      @include medium {
+        padding-top: 0;
+      }
+    }
+    &-address {
+      flex: 1;
+    }
+    &-col {
+      @include medium {
+        padding: 0 2rem;
+      }
+      &--left {
+        @include medium {
+          padding-left: 2rem;
+          border-left: 1px solid $secondary-cloud;
+        }
+        @include large {
+          padding-left: 4rem;
+        }
+      }
+
+      &--right {
+        @include medium {
+          margin-right: 7.5rem;
+        }
+        @include large {
+          margin-right: 8rem;
+        }
+      }
+    }
+  }
+}

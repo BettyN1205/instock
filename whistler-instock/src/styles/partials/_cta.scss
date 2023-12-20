@@ -1,0 +1,66 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+@use "./padding" as *;
+@use "./type-kit";
+@use "./variables" as *;
+
+.button {
+  border-radius: $border-radius;
+  height: 2.25rem;
+  padding: 0 $padding-4;
+  width: 100%;
+
+  @include medium {
+    height: 2.375rem;
+    width: auto;
+  }
+
+  &--primary {
+    background-color: $primary-instock-indigo;
+    color: $primary-white;
+
+    &:hover {
+      background-color: $primary-instock-black;
+    }
+  }
+
+  &--secondary {
+    background-color: $primary-white;
+    border: $border-width $secondary-cloud solid;
+    color: $secondary-slate;
+
+    &:hover {
+      border-color: $primary-instock-indigo;
+      color: $primary-instock-indigo;
+    }
+  }
+
+  &--delete {
+    background-color: $supporting-red;
+    color: $primary-white;
+
+    &:hover {
+      border-color: $primary-instock-black;
+    }
+  }
+}
+
+.text-link {
+  @extend .link;
+
+  align-items: center;
+  color: $primary-instock-indigo;
+  display: flex;
+  gap: $padding-1;
+
+  &::after {
+    content: url("./../../assets/icons/chevron_right-24px.svg");
+    margin-bottom: -$padding-1;
+  }
+}
+
+a.button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,95 @@
+@use "./../../styles/partials/colors" as *;
+@use "./../../styles/partials/cta";
+@use "./../../styles/partials/form-fields";
+@use "./../../styles/partials/layout-grid";
+@use "./../../styles/partials/mixins" as *;
+@use "./../../styles/partials/padding" as *;
+@use "./../../styles/partials/type-kit";
+@use "./../../styles/partials/variables" as *;
+
+.warehouses-header {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-3;
+  padding: 0 $padding-4 $padding-4;
+
+  @include medium {
+    align-items: center;
+    flex-direction: row;
+    padding-top: $padding-5;
+  }
+
+  &__heading {
+    @extend .page-header;
+
+    padding-top: $padding-5;
+
+    @include medium {
+      padding-top: 0;
+    }
+  }
+
+  &__search {
+    @extend .form-field, .form-field--search;
+
+    @include medium {
+      margin-left: auto;
+    }
+  }
+
+  &__button {
+    @extend .button, .button--primary;
+  }
+}
+
+.warehouses-table {
+  border-collapse: collapse;
+  text-align: left;
+
+  @include medium {
+    font-size: 0.875rem;
+  }
+
+  &__th {
+    @extend .table-header;
+
+    background-color: $background-light-gray;
+    padding-bottom: $padding-2;
+    padding-top: $padding-2;
+    width: 20%;
+
+    &:first-of-type {
+      padding-left: $padding-4;
+    }
+
+    &:last-of-type {
+      padding-right: $padding-4;
+      text-align: right;
+    }
+  }
+
+  &__td {
+    border-bottom: $border-width $secondary-cloud solid;
+    padding-bottom: $padding-3;
+    padding-top: $padding-3;
+
+    &:first-of-type {
+      padding-left: $padding-4;
+    }
+
+    &:last-of-type {
+      padding-right: $padding-4;
+      text-align: right;
+    }
+  }
+
+  &__actions {
+    justify-content: end;
+    display: flex;
+    gap: $padding-3;
+  }
+
+  &__link {
+    @extend .text-link;
+  }
+}

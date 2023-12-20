@@ -1,0 +1,25 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+@use "./padding" as *;
+@use "./variables" as *;
+
+.form-field {
+  border: $border-width $secondary-cloud solid;
+  border-radius: $border-radius;
+  height: 2.25rem;
+  padding: $padding-3;
+
+  @include medium {
+    height: 2.375rem;
+  }
+
+  &:focus {
+    border-color: $primary-instock-indigo;
+  }
+
+  &--search {
+    background-image: url("./../../assets/icons/search-24px.svg");
+    background-repeat: no-repeat;
+    background-position: right $padding-3 center;
+  }
+}

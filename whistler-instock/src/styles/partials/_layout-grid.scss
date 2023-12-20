@@ -1,0 +1,14 @@
+@use "./mixins" as *;
+
+.container {
+  margin: 0 1rem;
+
+  @include medium {
+    margin: 0 2rem;
+  }
+
+  @include large {
+    margin: 0 auto;
+    max-width: 63.75rem;
+  }
+}

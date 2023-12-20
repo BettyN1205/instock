@@ -1,0 +1,59 @@
+@use "./../../styles/partials/colors" as *;
+@use "./../../styles/partials/cta";
+@use "./../../styles/partials/layout-grid";
+@use "./../../styles/partials/mixins" as *;
+@use "./../../styles/partials/padding" as *;
+@use "./../../styles/partials/type-kit";
+
+.header {
+  background-color: $background-graphite;
+  height: 12.5rem;
+  padding-bottom: $padding-4;
+  padding-top: $padding-4;
+}
+
+.nav {
+  @extend .container;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: $padding-4;
+
+  @include medium {
+    flex-direction: row;
+  }
+
+  &__list {
+    align-items: center;
+    display: flex;
+    width: 100%;
+
+    @include medium {
+      margin-left: auto;
+      width: auto;
+    }
+  }
+
+  &__item {
+    width: 50%;
+  }
+
+  &__link {
+    @extend .button, .link;
+
+    color: $secondary-cloud;
+    text-align: center;
+
+    &:hover {
+      color: $primary-white;
+      text-decoration: underline;
+    }
+
+    &--active {
+      @extend .button--primary;
+
+      background-color: $primary-instock-black;
+    }
+  }
+}

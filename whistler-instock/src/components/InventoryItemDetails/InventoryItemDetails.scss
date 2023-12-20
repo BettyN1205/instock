@@ -1,0 +1,102 @@
+@use "./../../styles/partials/colors" as *;
+@use "./../../styles/partials/mixins" as *;
+@use "./../../styles/partials/padding" as *;
+@use "./../../styles/partials/type-kit";
+
+input,
+select,
+textarea {
+    outline: 0;
+}
+
+dl,
+dd,
+h1,
+h2 {
+    margin: 0;
+}
+
+.inventory-item-details {
+    &__page-header {
+        @extend .page-header;
+
+        align-items: end;
+        border-bottom: $secondary-cloud 0.0625rem solid;
+        display: flex;
+        gap: $padding-2;
+        padding: $padding-5 $padding-4 $padding-4;
+
+        @include medium {
+            align-items: center;
+            margin-bottom: $padding-4;
+            padding-left: $padding-5;
+            padding-right: $padding-5;
+        }
+
+        @include large {
+            padding-left: $padding-6;
+            padding-right: $padding-6;
+        }
+    }
+
+    &__page-header-icon {
+        margin-bottom: $padding-1;
+
+        @include medium {
+            margin-bottom: 0;
+        }
+
+        &--edit {
+            background-color: $primary-instock-indigo;
+            border-radius: 1.25rem;
+            margin: 0;
+            margin-left: auto;
+            padding: $padding-2;
+        }
+    }
+
+    &__label {
+        @extend .label;
+
+        color: $secondary-slate;
+        padding: $padding-1 0;
+        text-transform: uppercase;
+
+        &--green {
+            background-color: rgba($supporting-green, 7%);
+            border-radius: 1.25rem;
+            color: $supporting-green;
+            padding: $padding-2 $padding-3;
+        }
+    }
+
+    &__section {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: $padding-3;
+        padding: $padding-3 $padding-4 $padding-4;
+
+        @include medium {
+            padding-left: $padding-5;
+            padding-right: $padding-5;
+        }
+
+        @include large {
+            padding-left: $padding-6;
+            padding-right: $padding-6;
+        }
+    }
+
+    &__sub-section {
+        display: flex;
+        flex-direction: column;
+        gap: $padding-3;
+        width: 50%;
+    }
+
+    &__dl {
+        &--half-width {
+            width: 50%;
+        }
+    }
+}
